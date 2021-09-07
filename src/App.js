@@ -1,4 +1,4 @@
-import React , { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from './componentes/Header';
 import Footer from './componentes/Footer';
 import Producto from './componentes/producto';
@@ -10,42 +10,42 @@ function App() {
 
   // Crear listado de productos
   // el segundo paramatro es la funcion que modifica el state 
-  const [ productos, setProductos ] = useState([
-    { id: 1, nombre: 'Camisa React' , precio: 50 },
-    { id: 2, nombre: 'Camisa Vuejs' , precio: 20 },
-    { id: 3, nombre: 'Camisa Node.js' , precio: 30 },
-    { id: 4, nombre: 'Camisa Angular.js' , precio: 40 }
+  const [productos, setProductos] = useState([
+    { id: 1, nombre: 'Camisa React', precio: 50 },
+    { id: 2, nombre: 'Camisa Vuejs', precio: 20 },
+    { id: 3, nombre: 'Camisa Node.js', precio: 30 },
+    { id: 4, nombre: 'Camisa Angular.js', precio: 40 }
   ]);
 
   // Listado del carrito 
-  const [ carrito, agregarCarrrito ] = useState([]);
+  const [carrito, agregarCarrrito] = useState([]);
 
   // Obtener fecha 
   const fecha = new Date().getFullYear();
 
   return (
     <Fragment>
-      <Header 
-        titulo = "Tienda Virtual"
+      <Header
+        titulo="Tienda Virtual"
       />
       <h1>Lista de productos</h1>
-      {productos.map( producto => (
+      {productos.map(producto => (
         <Producto
-        // estos son prosp que se le estan pasando al componete Producto
-          key = {producto.id}
-          producto = {producto}
-          productos = {productos}
-          carrito = {carrito}
-          agregarCarrrito = {agregarCarrrito}
+          // estos son prosp que se le estan pasando al componete Producto
+          key={producto.id}
+          producto={producto}
+          productos={productos}
+          carrito={carrito}
+          agregarCarrrito={agregarCarrrito}
         />
       ))}
-      <Carrito 
+      <Carrito
         carrito={carrito}
         agregarCarrrito={agregarCarrrito}
       />
-      <Footer 
-        fecha = { fecha }
-      /> 
+      <Footer
+        fecha={fecha}
+      />
     </Fragment>
   );
 }
